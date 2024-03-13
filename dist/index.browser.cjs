@@ -20,7 +20,7 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 // src/index.browser.ts
 var index_browser_exports = {};
 __export(index_browser_exports, {
-  createClientSocket: () => createClientSocket
+  createClientAirSocket: () => createClientAirSocket
 });
 module.exports = __toCommonJS(index_browser_exports);
 
@@ -33,8 +33,8 @@ var rxToTx = (input) => {
   return input;
 };
 
-// src/components/createClientSocket.ts
-var createClientSocket = (socket) => {
+// src/components/createClientAirSocket.ts
+var createClientAirSocket = (socket) => {
   const socketWrapper = {
     on: (action, callback) => {
       socket.on(rxToTx(action), callback);
@@ -48,5 +48,5 @@ var createClientSocket = (socket) => {
 };
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
-  createClientSocket
+  createClientAirSocket
 });

@@ -1,9 +1,10 @@
 
-import { Socket } from 'socket.io-client';
+
+
+import { Socket } from 'socket.io';
 import { rxToTx } from '../functions/rxtx.js';
 
-
-export const createClientSocket = (
+export const createServerAirSocket = (
     socket: Socket
 ) => {
     const socketWrapper = {
@@ -18,4 +19,4 @@ export const createClientSocket = (
     return socketWrapper
 }
 
-export type ClientSocket = ReturnType<typeof createClientSocket>
+export type ServerAirSocket = ReturnType<typeof createServerAirSocket>
