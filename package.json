@@ -1,7 +1,7 @@
 {
     "name": "@thinairthings/air-sockets",
     "version": "0.1.21",
-    "types": "dist/index.browser.d.ts",
+    "types": "dist/index.node.d.ts",
     "type": "module",
     "scripts": {
         "build": "tsup",
