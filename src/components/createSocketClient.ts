@@ -11,7 +11,7 @@ export const createSocketClient = (
             return socketWrapper
         },
         emitWithAck: async <T, U>(action: string, payload: T) => {
-            return await socket.emitWithAck(rxToTx(action), payload) as U
+            return await socket.emitWithAck(action, payload) as U
         }
     }
     return socketWrapper

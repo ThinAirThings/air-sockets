@@ -17,7 +17,7 @@ var createSocketClient = (socket) => {
       return socketWrapper;
     },
     emitWithAck: async (action, payload) => {
-      return await socket.emitWithAck(rxToTx(action), payload);
+      return await socket.emitWithAck(action, payload);
     }
   };
   return socketWrapper;
