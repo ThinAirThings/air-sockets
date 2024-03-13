@@ -5,8 +5,8 @@ export default defineConfig({
     clean: true,
     shims: true,
     dts: true,
-    format: ["esm", "cjs"],
-    banner: {
-        // Can make two separate configs to do for nextjs with 'use server'
-    },
+    format: ["cjs", "esm"],
+    // banner: {
+    //     // Can make two separate configs to do for nextjs with 'use server'
+    // },
 });

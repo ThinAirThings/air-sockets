@@ -14,13 +14,13 @@
     "exports": {
         "node": {
             "types": "./dist/index.node.d.ts",
-            "import": "./dist/index.node.js",
-            "require": "./dist/index.node.cjs"
+            "import": "./dist/index.node.mjs",
+            "require": "./dist/index.node.js"
         },
         "default": {
             "types": "./dist/index.browser.d.ts",
-            "import": "./dist/index.browser.js",
-            "require": "./dist/index.browser.cjs"
+            "import": "./dist/index.browser.mjs",
+            "require": "./dist/index.browser.js"
         }
     },
     "repository": {
