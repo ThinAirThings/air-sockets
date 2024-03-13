@@ -1,9 +1,9 @@
 {
     "name": "@thinairthings/air-sockets",
-    "version": "0.1.19",
+    "version": "0.1.20",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
-    "type" : "module",
+    "type": "module",
     "scripts": {
         "build": "tsup",
         "npmpub": "npm run build && git add . && git commit -m \"mod\" && git push && npm version patch && npm publish --access public",
