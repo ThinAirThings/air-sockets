@@ -18,3 +18,5 @@ export const createServerSocket = (
     }
     return socketWrapper
 }
+
+export type ServerSocket = ReturnType<typeof createServerSocket>

@@ -17,3 +17,5 @@ export const createClientSocket = (
     }
     return socketWrapper
 }
+
+export type ClientSocket = ReturnType<typeof createClientSocket>
