@@ -3,10 +3,12 @@ import { Socket } from 'socket.io-client';
 import { rxToTx } from '../functions/rxtx.js';
 
 
+
 export const createClientAirSocket = (
     socket: Socket
 ) => {
     const socketWrapper = {
+        ...socket,
         on: <T>(action: string, callback: (payload: T) => void) => {
             socket.on(rxToTx(action), callback)
             return socketWrapper
