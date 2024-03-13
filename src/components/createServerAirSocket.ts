@@ -16,7 +16,7 @@ export const createServerAirSocket = (
 ) => {
     const socketWrapper = {
         ioSocket: socket,
-        on: <T>(action: string, callback: (payload: T) => void) => {
+        on: <T>(action: string, callback: (payload: T, ackCallback: (ackPayload: any) => void) => void) => {
             socket.on(rxToTx(action), callback)
             return socketWrapper
         },
