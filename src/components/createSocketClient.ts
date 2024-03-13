@@ -9,6 +9,9 @@ export const createSocketClient = (
         on: <T>(action: string, callback: (payload: T) => void) => {
             socket.on(rxToTx(action), callback)
             return socketWrapper
+        },
+        emitWithAck: async <T, U>(action: string, payload: T) => {
+            return await socket.emitWithAck(rxToTx(action), payload) as U
         }
     }
     return socketWrapper
