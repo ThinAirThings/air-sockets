@@ -1,6 +1,6 @@
 {
     "name": "@thinairthings/air-sockets",
-    "version": "0.1.31",
+    "version": "0.1.32",
     "types": "dist/index.node.d.ts",
     "type": "module",
     "scripts": {
