@@ -1,5 +1,3 @@
-'use server'
-
 // src/functions/rxtx.ts
 var rxToTx = (input) => {
   const txIndex = input.indexOf("rx");
@@ -9,8 +7,8 @@ var rxToTx = (input) => {
   return input;
 };
 
-// src/components/createSocketClient.ts
-var createSocketClient = (socket) => {
+// src/components/createClientSocket.ts
+var createClientSocket = (socket) => {
   const socketWrapper = {
     on: (action, callback) => {
       socket.on(rxToTx(action), callback);
@@ -22,6 +20,8 @@ var createSocketClient = (socket) => {
   };
   return socketWrapper;
 };
+
 export {
-  createSocketClient
+  rxToTx,
+  createClientSocket
 };

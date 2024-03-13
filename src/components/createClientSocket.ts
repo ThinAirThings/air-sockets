@@ -2,7 +2,7 @@
 import { Socket } from 'socket.io-client';
 import { rxToTx } from '../functions/rxtx';
 
-export const createSocketClient = (
+export const createClientSocket = (
     socket: Socket
 ) => {
     const socketWrapper = {
