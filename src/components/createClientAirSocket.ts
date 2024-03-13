@@ -4,9 +4,14 @@ import { rxToTx } from '../functions/rxtx.js';
 
 
 
-export const createClientAirSocket = (
+export const createClientAirSocket = async (
     socket: Socket
 ) => {
+    await new Promise<void>(resolve => {
+        socket.on('connect', () => {
+            resolve()
+        })
+    })
     const socketWrapper = {
         ...socket,
         on: <T>(action: string, callback: (payload: T) => void) => {

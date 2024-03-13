@@ -35,7 +35,12 @@ var rxToTx = (input) => {
 };
 
 // src/components/createClientAirSocket.ts
-var createClientAirSocket = (socket) => {
+var createClientAirSocket = async (socket) => {
+  await new Promise((resolve) => {
+    socket.on("connect", () => {
+      resolve();
+    });
+  });
   const socketWrapper = {
     ...socket,
     on: (action, callback) => {
