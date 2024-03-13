@@ -12,3 +12,4 @@ export const rxToTx = (input: string) => {
   // If "tx" is not found, return the input string unchanged
   return input;
 }
+
