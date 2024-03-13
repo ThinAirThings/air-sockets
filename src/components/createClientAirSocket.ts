@@ -13,7 +13,7 @@ export const createClientAirSocket = async (
         })
     })
     const socketWrapper = {
-        ...socket,
+        ioSocket: socket,
         on: <T>(action: string, callback: (payload: T) => void) => {
             socket.on(rxToTx(action), callback)
             return socketWrapper

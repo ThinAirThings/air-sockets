@@ -1,8 +1,7 @@
 export { ClientAirSocket, createClientAirSocket } from './index.browser.cjs';
 import { Socket } from 'socket.io';
-import 'socket.io-parser';
-import 'socket.io-client';
 import '@socket.io/component-emitter';
+import 'socket.io-client';
 
 type ServerAirSocket = {
     ioSocket: Socket;

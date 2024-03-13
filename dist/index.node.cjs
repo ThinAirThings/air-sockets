@@ -42,7 +42,7 @@ var createClientAirSocket = async (socket) => {
     });
   });
   const socketWrapper = {
-    ...socket,
+    ioSocket: socket,
     on: (action, callback) => {
       socket.on(rxToTx(action), callback);
       return socketWrapper;
