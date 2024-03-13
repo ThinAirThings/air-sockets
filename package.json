@@ -12,15 +12,16 @@
         "dist"
     ],
     "exports": {
-        "node": {
-            "types": "./dist/index.node.d.ts",
-            "import": "./dist/index.node.mjs",
-            "require": "./dist/index.node.js"
-        },
-        "default": {
-            "types": "./dist/index.browser.d.ts",
-            "import": "./dist/index.browser.mjs",
-            "require": "./dist/index.browser.js"
+        ".": {
+            "node": {
+                "import": "./dist/node/index.mjs",
+                "require": "./dist/node/index.js"
+            },
+            "browser": {
+                "import": "./dist/browser/index.mjs",
+                "require": "./dist/browser/index.js"
+            },
+            "types": "./types/index.d.ts"
         }
     },
     "repository": {
