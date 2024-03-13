@@ -1,4 +1,4 @@
-export { createClientSocket } from './index.browser.mjs';
+export { createClientSocket } from './index.browser.cjs';
 import { Socket } from 'socket.io';
 import 'socket.io-client';
 

@@ -1,5 +1,5 @@
 
 
 
-export { createClientSocket } from './components/createClientSocket'
-export { createServerSocket } from './components/createServerSocket'
+export { createClientSocket } from './components/createClientSocket.js'
+export { createServerSocket } from './components/createServerSocket.js'

@@ -2,7 +2,7 @@
 
 
 import { Socket } from 'socket.io';
-import { rxToTx } from '../functions/rxtx';
+import { rxToTx } from '../functions/rxtx.js';
 
 export const createServerSocket = (
     socket: Socket

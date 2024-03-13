@@ -3,6 +3,7 @@
     "version": "0.1.19",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
+    "type" : "module",
     "scripts": {
         "build": "tsup",
         "npmpub": "npm run build && git add . && git commit -m \"mod\" && git push && npm version patch && npm publish --access public",
@@ -12,16 +13,15 @@
         "dist"
     ],
     "exports": {
-        ".": {
-            "node": {
-                "import": "./dist/node/index.mjs",
-                "require": "./dist/node/index.js"
-            },
-            "browser": {
-                "import": "./dist/browser/index.mjs",
-                "require": "./dist/browser/index.js"
-            },
-            "types": "./types/index.d.ts"
+        "node": {
+            "types": "./dist/index.node.d.ts",
+            "import": "./dist/index.node.js",
+            "require": "./dist/index.node.cjs"
+        },
+        "default": {
+            "types": "./dist/index.browser.d.ts",
+            "import": "./dist/index.browser.js",
+            "require": "./dist/index.browser.cjs"
         }
     },
     "repository": {

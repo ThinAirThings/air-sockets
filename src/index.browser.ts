@@ -1,2 +1,2 @@
 
-export { createClientSocket } from './components/createClientSocket'
+export { createClientSocket } from './components/createClientSocket.js'
