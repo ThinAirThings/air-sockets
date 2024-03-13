@@ -52,7 +52,7 @@ var createClientAirSocket = (socket) => {
 // src/components/createServerAirSocket.ts
 var createServerAirSocket = (socket) => {
   const socketWrapper = {
-    ...socket,
+    ioSocket: socket,
     on: (action, callback) => {
       socket.on(rxToTx(action), callback);
       return socketWrapper;

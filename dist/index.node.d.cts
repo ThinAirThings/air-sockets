@@ -4,10 +4,11 @@ import 'socket.io-parser';
 import 'socket.io-client';
 import '@socket.io/component-emitter';
 
-interface ServerAirSocket extends Omit<Socket, 'on' | 'emitWithAck'> {
+type ServerAirSocket = {
+    ioSocket: Socket;
     on<T>(action: string, callback: (payload: T) => void): ServerAirSocket;
     emitWithAck<T, U>(action: string, payload: T): Promise<U>;
-}
+};
 declare const createServerAirSocket: (socket: Socket) => ServerAirSocket;
 
 export { ServerAirSocket, createServerAirSocket };
