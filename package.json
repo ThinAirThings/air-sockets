@@ -1,0 +1,44 @@
+{
+    "name": "@thinairthings/air-sockets",
+    "version": "0.1.9",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsup",
+        "npmpub": "npm run build && git add . && git commit -m \"mod\" && git push && npm version patch && npm publish --access public",
+        "format": "npx prettier --write ."
+    },
+    "files": [
+        "dist"
+    ],
+    "exports": {
+        "node": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.cjs"
+        },
+        "default": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.cjs"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/thinairthings/air-sockets.git"
+    },
+    "devDependencies": {
+        "@types/node": "20.6.3",
+        "@types/uuid": "^9.0.8",
+        "tsup": "^7.2.0",
+        "typescript": "~5.2.2"
+    },
+    "keywords": [],
+    "author": "Dan Lannan",
+    "dependencies": {
+        "uuid": "^9.0.1"
+    },
+    "peerDependencies": {
+        "socket.io-client": "^4.7.4"
+    }
+}
