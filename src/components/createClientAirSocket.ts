@@ -5,13 +5,22 @@ import { rxToTx } from '../functions/rxtx.js';
 
 
 export const createClientAirSocket = async (
-    socket: Socket
+    socket: Socket,
+    actions?: {
+        action: string
+        handler: <T>(payload: T, response: (payload: any) => void) => void
+    }[]
 ) => {
     await new Promise<void>(resolve => {
         socket.on('connect', () => {
             resolve()
         })
     })
+    if (actions) {
+        actions.forEach(({ action, handler }) => {
+            socket.on(rxToTx(action), handler)
+        })
+    }
     const socketWrapper = {
         ioSocket: socket,
         on: <T>(action: string, callback: (payload: T) => void) => {
