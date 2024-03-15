@@ -8,7 +8,7 @@ export const createClientAirSocket = async (
     socket: Socket,
     actions?: {
         action: string
-        handler: <T>(payload: T, response: (payload: any) => void) => void
+        handler: (payload: any, response: (payload: any) => void) => void
     }[]
 ) => {
     await new Promise<void>(resolve => {
