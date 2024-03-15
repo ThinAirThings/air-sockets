@@ -25,4 +25,4 @@ export const createClientAirSocket = async (
     return socketWrapper
 }
 
-export type ClientAirSocket = ReturnType<typeof createClientAirSocket>
+export type ClientAirSocket = Awaited<ReturnType<typeof createClientAirSocket>>
